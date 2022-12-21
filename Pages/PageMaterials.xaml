@@ -1,0 +1,143 @@
+﻿<Page x:Class="OdezhdaDlyaRuchek.Pages.PageMaterials"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OdezhdaDlyaRuchek.Pages" xmlns:sys="clr-namespace:System;assembly=mscorlib"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1000"
+      Title="Список материалов">
+    <Page.Resources>
+        <sys:String x:Key="NullImage">
+            pack://application:,,,/Resources/picture.png
+        </sys:String>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23*"/>
+            <RowDefinition Height="23*"/>
+            <RowDefinition Height="200*"/>
+            <RowDefinition Height="23*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0"
+                        Orientation="Horizontal">
+                <TextBlock Text="Поиск: "
+                           Style="{StaticResource tblockSearch}"/>
+                <TextBox Name="tboxSearch"
+                         Style="{StaticResource tboxSearch}" TextChanged="tboxSearch_TextChanged"/>
+            </StackPanel>
+            <ComboBox Grid.Column="1"
+                      x:Name="cmbSotring"
+                      Style="{StaticResource cmbSearch}"
+                      IsReadOnly="True"
+                      IsEditable="True"
+                      DisplayMemberPath="Name"
+                      Text="Сортировка" SelectionChanged="cmbSotring_SelectionChanged"/>
+            <ComboBox Grid.Column="2"
+                      x:Name="cmbFilering"
+                      IsReadOnly="True"
+                      IsEditable="True"
+                      DisplayMemberPath="Name"
+                      Text="Фильтрация"
+                      Style="{StaticResource cmbSearch}" SelectionChanged="cmbFilering_SelectionChanged"/>
+        </Grid>
+        <StackPanel Grid.Row="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <TextBlock Name="tblockDataCount"
+                       Style="{StaticResource tblockListView}"/>
+        </StackPanel>
+        <ListView Grid.Row="2"
+                  x:Name="listMaterials"
+                  ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel>
+                        
+                    </WrapPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="1"
+                            BorderBrush="Black">
+                        <Grid Width="900"
+                              Height="145"
+                              Background="{Binding ColorBrush}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="6*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0"
+                                   Source="{Binding ImgPath, FallbackValue={StaticResource NullImage}}"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   Margin="10"/>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="2*"/>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="2*"/>
+                                </Grid.RowDefinitions>
+                                <UniformGrid Grid.Row="0"
+                                             Rows="1" Columns="3">
+                                    <TextBlock Text="{Binding MaterialType.Name}"
+                                               Style="{StaticResource tblockListView}"
+                                               TextAlignment="Right"/>
+                                    <TextBlock Text="|"
+                                               Style="{StaticResource tblockListView}"/>
+                                    <TextBlock Text="{Binding Name}"
+                                               Style="{StaticResource tblockListView}"
+                                               TextAlignment="Left"/>
+                                </UniformGrid>
+                                <TextBlock Grid.Row="1"
+                                           Style="{StaticResource tblockListViewText}"
+                                           Text="{Binding MinimumMaterial}"/>
+                                <StackPanel Grid.Row="2" 
+                                            Orientation="Horizontal">
+                                    <TextBlock Style="{StaticResource tblockListView}"
+                                               VerticalAlignment="Top"
+                                           Text="Поставщики:"
+                                           FontWeight="Bold"/>
+                                    <TextBlock Style="{StaticResource tblockListViewText}"
+                                           Text="{Binding PossibleProviders.Name}"/>
+                                </StackPanel>
+                            </Grid>
+                            <TextBlock Grid.Column="2"
+                                       Style="{StaticResource tblockListView}"
+                                       Text="{Binding ReminderStock}"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <StackPanel Grid.Row="3"
+                    Orientation="Horizontal"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right">
+            <Button Name="btnFirstPage"
+                    Content="&lt;&lt;"
+                    Style="{StaticResource btnPagination}" Click="btnFirstPage_Click"/>
+            <Button Name="btnPreviousPage"
+                    Content="&lt;"
+                    Style="{StaticResource btnPagination}" Click="btnPreviousPage_Click"/>
+            <TextBlock x:Name="tblockPaginationPages"
+                       Text=""
+                       Style="{StaticResource tblockListView}"/>
+            <Button Name="btnForwardPage"
+                    Content=">"
+                    Style="{StaticResource btnPagination}" Click="btnForwardPage_Click"/>
+            <Button Name="btnLastPage"
+                    Content=">>"
+                    Style="{StaticResource btnPagination}" Click="btnLastPage_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

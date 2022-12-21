@@ -1,0 +1,40 @@
+﻿<Window x:Class="OdezhdaDlyaRuchek.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OdezhdaDlyaRuchek"
+        mc:Ignorable="d"
+        Title="Одежда для ручек" Height="800" Width="1000" MinHeight="800" MinWidth="1000">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="23*"/>
+            <RowDefinition Height="200*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0"
+                    Orientation="Horizontal"
+                    Background="#B3F4E9">
+            <Image Source="Resources/Одежда для ручек.png"
+                       Width="50"
+                       Margin="5 5 0 5"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    Width="400"
+                    HorizontalAlignment="Center"
+                    Grid.Row="0">
+            <TextBlock Text="{Binding ElementName=frmMain, Path=Content.Title}"
+                       Style="{StaticResource tblockTitle}"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+            <Button Name="btnBack"
+                    Content="Назад"
+                    Style="{StaticResource btnTitle}" Click="btnBack_Click"/>
+            <Button Name="btnExit"
+                    Content="Выход"
+                    Style="{StaticResource btnTitle}" Click="btnExit_Click"/>
+        </StackPanel>
+
+        <Frame x:Name="frmMain" Grid.Row="1" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
