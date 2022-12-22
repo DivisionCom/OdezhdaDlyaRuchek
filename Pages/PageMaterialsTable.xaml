@@ -1,0 +1,72 @@
+﻿<Page x:Class="OdezhdaDlyaRuchek.Pages.PageMaterialsTable"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OdezhdaDlyaRuchek.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1000"
+      Title="Управление материалами">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Row="0"
+                  x:Name="DataGridMaterials"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  FontFamily="Candara"
+                  FontSize="14">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Наименование"
+                                    Width="*"
+                                    Binding="{Binding Name}"/>
+                <DataGridTextColumn Header="Тип материала"
+                                    Width="*"
+                                    Binding="{Binding MaterialType.Name}"/>
+                <DataGridTextColumn Header="Количество на складе"
+                                    Width="*"
+                                    Binding="{Binding WarehouseCount}"/>
+                <DataGridTextColumn Header="Единица измерения"
+                                    Width="*"
+                                    Binding="{Binding Unit}"/>
+                <DataGridTextColumn Header="Количество в упаковке"
+                                    Width="*"
+                                    Binding="{Binding BoxCount}"/>
+                <DataGridTextColumn Header="Минимальное количество"
+                                    Width="*"
+                                    Binding="{Binding MinimumCount}"/>
+                <DataGridTextColumn Header="Стоимость"
+                                    Width="*"
+                                    Binding="{Binding Price}"/>
+                <DataGridTextColumn Header="Изображение"
+                                    Width="*"
+                                    Binding="{Binding Image}"/>
+                <DataGridTextColumn Header="Описание"
+                                    Width="*"
+                                    Binding="{Binding Description}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Name="btnEdit"
+                                    Content="Редактировать"
+                                    Foreground="#FFFFFF"
+                                    Background="#A5E887"
+                                    Click="btnEdit_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center">
+            <Button Name="btnAdd"
+                    Content="Добавить материал"
+                    Style="{StaticResource btnMain}" Click="btnAdd_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

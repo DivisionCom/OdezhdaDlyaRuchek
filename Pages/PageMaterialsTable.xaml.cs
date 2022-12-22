@@ -17,23 +17,30 @@ using System.Windows.Shapes;
 namespace OdezhdaDlyaRuchek.Pages
 {
     /// <summary>
-    /// Interaction logic for PageMenu.xaml
+    /// Interaction logic for PageMaterialsTable.xaml
     /// </summary>
-    public partial class PageMenu : Page
+    public partial class PageMaterialsTable : Page
     {
-        public PageMenu()
+        public PageMaterialsTable()
         {
             InitializeComponent();
+
+            RefreshTable();
         }
 
-        private void btnMaterials_Click(object sender, RoutedEventArgs e)
+        public void RefreshTable()
         {
-            FrameObj.frameMain.Navigate(new PageMaterials());
+            DataGridMaterials.ItemsSource = ConnectOdb.conObj.Materials.ToList();
         }
 
-        private void btnMaterialsTable_Click(object sender, RoutedEventArgs e)
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            FrameObj.frameMain.Navigate(new PageMaterialsTable());
+            FrameObj.frameMain.Navigate(new PageMaterialsEdit(sender, this));
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            FrameObj.frameMain.Navigate(new PageMaterialsAdd(this));
         }
     }
 }

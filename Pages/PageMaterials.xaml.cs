@@ -22,8 +22,6 @@ namespace OdezhdaDlyaRuchek.Pages
     public partial class PageMaterials : Page
     {
         private List<Materials> _materials = new List<Materials>();
-        private string _selectedType;
-        private string _findedName;
         private int _currentPage = 1;
         private int _maxPage = 1;
         private int _currentCount;

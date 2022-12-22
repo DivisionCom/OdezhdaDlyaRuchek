@@ -112,6 +112,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\PageMaterialsAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageMaterialsEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageMaterialsTable.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\PageMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -120,6 +132,15 @@
   <ItemGroup>
     <Compile Include="Pages\PageMaterials.xaml.cs">
       <DependentUpon>PageMaterials.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageMaterialsAdd.xaml.cs">
+      <DependentUpon>PageMaterialsAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageMaterialsEdit.xaml.cs">
+      <DependentUpon>PageMaterialsEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PageMaterialsTable.xaml.cs">
+      <DependentUpon>PageMaterialsTable.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PageMenu.xaml.cs">
       <DependentUpon>PageMenu.xaml</DependentUpon>

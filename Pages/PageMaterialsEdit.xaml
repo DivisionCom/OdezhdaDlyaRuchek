@@ -1,0 +1,83 @@
+﻿<Page x:Class="OdezhdaDlyaRuchek.Pages.PageMaterialsEdit"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:OdezhdaDlyaRuchek.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1000"
+      Title="Редактирование материала">
+
+    <Grid>
+        <StackPanel Orientation="Vertical"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Наименование: "
+                           Style="{StaticResource tblockMain}"/>
+                <TextBox Name="tboxName"
+                         Style="{StaticResource tboxMain}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Тип материала: "
+                           Style="{StaticResource tblockMain}"/>
+                <ComboBox Name="cmbMaterialType"
+                          DisplayMemberPath="Name"
+                          Style="{StaticResource cmbSearch}"
+                          Width="250"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Количество на складе: "
+                           Style="{StaticResource tblockMain}"/>
+                <TextBox Name="tboxWarehouseCount"
+                         Style="{StaticResource tboxMain}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Единица измерения: "
+                           Style="{StaticResource tblockMain}"/>
+                <TextBox Name="tboxUnit"
+                         Style="{StaticResource tboxMain}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Количество в упаковке: "
+                           Style="{StaticResource tblockMain}"/>
+                <TextBox Name="tboxBoxCount"
+                         Style="{StaticResource tboxMain}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Минимальное количество: "
+                           Style="{StaticResource tblockMain}"/>
+                <TextBox Name="tboxMinimumCount"
+                         Style="{StaticResource tboxMain}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Стоимость: "
+                           Style="{StaticResource tblockMain}"/>
+                <TextBox Name="tboxPrice"
+                         Style="{StaticResource tboxMain}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Изображение: "
+                           Style="{StaticResource tblockMain}"/>
+                <TextBox Name="tboxImage"
+                         Style="{StaticResource tboxMain}"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Описание: "
+                           Style="{StaticResource tblockMain}"/>
+                <TextBox Name="tboxDescription"
+                         Style="{StaticResource tboxMain}"
+                         TextWrapping="Wrap"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Right">
+                <Button x:Name="btnEdit"
+                        Content="Редактировать материал"
+                        Style="{StaticResource btnMain}" Click="btnEdit_Click"/>
+                <Button x:Name="btnDelete"
+                        Content="Удалить материал"
+                        Style="{StaticResource btnMain}" Click="btnDelete_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Page>

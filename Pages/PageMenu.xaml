@@ -15,6 +15,9 @@
             <Button Name="btnMaterials"
                     Content="Список материалов"
                     Style="{StaticResource btnMain}" Click="btnMaterials_Click"/>
+            <Button Name="btnMaterialsTable"
+                    Content="Управление материалами"
+                    Style="{StaticResource btnMain}" Click="btnMaterialsTable_Click"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -33,7 +33,7 @@
         </Style>
         <Style TargetType="TextBlock" x:Key="tblockTitle">
             <Setter Property="Margin" Value="5"/>
-            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="FontSize" Value="34"/>
             <Setter Property="FontFamily" Value="Candara"/>
             <Setter Property="Foreground" Value="#FFFFFF"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
@@ -68,9 +68,28 @@
             <Setter Property="TextAlignment" Value="Left"/>
             <Setter Property="Width" Value="500"/>
         </Style>
+        <Style TargetType="TextBlock" x:Key="tblockMain">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="FontFamily" Value="Candara"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="Width" Value="200"/>
+        </Style>
         <Style TargetType="TextBox" x:Key="tboxSearch">
             <Setter Property="Margin" Value="5"/>
             <Setter Property="Width" Value="350"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="FontFamily" Value="Candara"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBox" x:Key="tboxMain">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Width" Value="250"/>
             <Setter Property="Height" Value="40"/>
             <Setter Property="FontSize" Value="17"/>
             <Setter Property="FontFamily" Value="Candara"/>
